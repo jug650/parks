@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Corvallis Parks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--meta data for sharing links on Facebook-->
+    <meta property="og:title" content="Parks of the City of Corvallis" />
+    <meta property="og:url" content="http://cdn.rawgit.com/jakobzhao/storymap/master/example/video/index.html" />
+    <meta property="og:description" content="This is a site that describes the parks of the city of Corvallis." />
+    <meta property="og:image" content="img/screenshot.jpg" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+    <!--animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--facebook and info icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--use a better font for this web map-->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="dist/storymap.css">
+    <!--add favicon for the web page-->
+    <link rel="shortcut icon" href="assets/favicon/favicon-96x96.png" type="image/x-icon">
+    <style>
+        .end-background-img {
+            background: url(assets/sunset1.jpg) no-repeat center center fixed;
+        }
+    </style>
+
+    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--story map plugin-->
+    <script src="dist/storymap.js"></script>
+
+    <!-- bing map -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
+    <script src="http://gmaclennan.github.io/leaflet-bing-layer/leaflet-bing-layer.js"></script>
+
+    <!-- mini globle map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="js/globeminimap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 main">
+            <section data-scene="overview">
+                <img class="background-fullscreen-setting" src="assets/chip4.jpeg" alt="Orient Express">
+                <div class= "background-fullscreen-setting text-responsive text-center" >
+                <!--<video class="background-fullscreen-setting" playsinline autoplay muted loop>-->
+                    <!--<source src="assets/sunset.jpeg" type="image/jpeg">-->
+                <!--</video>-->
+                <div class= "background-fullscreen-setting text-responsive text-center" >
+                    <h3 style="color: black">Parks of the City of Corvallis</h3>
+                    <h3><small style="color: black">Where the parks are and what makes them unique.</small></h3>
+                </div>
+            </section>
+            <!--<section data-scene="intro">-->
+                <!--<h2>Park Overview</h2>-->
+                <!--<p>Living in the Pacific Northwest provides many benefits. Our geographic setting is one that encourages outdoor activity. Fueled by spectacular views, cool weather, and relatively close proximity, many individuals explore the parks and nature areas that are in our local communities. The city of Corvallis is no exception to this theme. The flow of its local rivers in close proximity to the Coast Mountains allows for the creation of some pretty splendid amenities. For a town of a population of less than 60,000 people, the city clearly has an abundance in parks and nature areas with 32.</p>-->
+                <!--<p>Instead of highlighting all 32 parks, we will highlight a few of the more popular parks. However, the map to the right does display ALL of the parks. Hovering over the park will display the park's name. Feel free to explore!</p>-->
+
+                <!--&lt;!&ndash;<img src="assets/gazebo1.jpg" style="&ndash;&gt;-->
+    <!--&lt;!&ndash;padding-left: 40px">&ndash;&gt;-->
+
+                <!--<img src="assets/gazebo1.jpg" style="-->
+    <!--padding-left: 35px;-->
+    <!--padding-top: 25px;-->
+    <!--">-->
+            <!--</section>-->
+
+            <section data-scene="corvallis">
+                <h2>Park Overview</h2>
+                <p>Living in the Pacific Northwest provides many benefits. Our geographic setting is one that encourages outdoor activity. Fueled by spectacular views, cool weather, and relatively close proximity, many individuals explore the parks and nature areas that are in our local communities. The city of Corvallis is no exception to this theme. The flow of its local rivers in close proximity to the Coast Mountains allows for the creation of some pretty splendid amenities. For a town of less than 60,000 people, the city clearly has an abundance in parks and nature areas with 32.</p>
+                <p>Instead of highlighting all 32 parks, we will highlight a few of the more popular parks. However, the map to the right does display ALL of the parks. Hovering over the park will display the park's name. Feel free to explore!</p>
+
+                <img src="assets/gazebo1.jpg" style="
+    padding-left: 35px;
+    padding-top: 25px;
+    ">
+            </section>
+
+            <section data-scene="chip">
+                <h2>Chip Ross Park</h2>
+                <p>Chip Ross Park consist of 125.6 acres and is located on the north side of the city. Chip Ross Park features an easy-to-moderate 1.5 mile trail through lush forest and hilltop habitats of upland prairie and Oak savanna. The park offers beautiful views of Corvallis, the Willamette Valley, the Coast Range and the Cascade Mountains. Hikers and runners can also access the many miles of trails in adjacent McDonald Forest from here.</p>
+                <p>Horseback riding and bicycling are permitted on seasonally designated trails. The park is a designated off-leash area for dogs and their humans to socialize and enjoy. There are picnic tables at the Lester Ave. trailhead.</p>
+                <p>Note: Chip Ross Park is currently under a restoration project. While during this period, the park is still open to the public. However, just be aware that there may be ongoing work during your visit.</p>
+
+                <img src="assets/autumn1.jpg" style="
+    padding-left: 75px;
+    padding-bottom: 10px;
+">
+            </section>
+
+            <section data-scene="avery">
+                <h2>Avery Park</h2>
+                <img src="assets/avery1.jpg" style="
+    padding-left: 50px;
+">
+                <p>Avery Park is located on the banks of the Marys River just south of the Oregon State University Campus and consist of 75.3 acres. It features natural areas, sports fields, and five picnic shelters. Any of these shelters, the Thompson, Fire Side, Townsend, Maple Grove and Lions picnic shelters may be reserved for private events and parties. There are several playground structures scattered throughout the park and a one-mile walking/jogging trail winds through the park and along the Marys River riparian area.</p>
+                <p>The Rose Garden area is a popular feature of Avery Park and Natural Area, with over 250 varieties of Roses, blooming from May to October (full bloom is in June). It makes a lovely backdrop for photographs. The Avery House Nature Center is found in Avery Park, as is the Applegate Trail interpretive kiosk. Avery Park also includes a Rhododendron garden, a compost demonstration area, and an extensive horseshoe pit area that that hosts an annual regional horseshoe tournament. </p>
+                <p>The Corvallis Parks and Recreation's administrative office is located in Avery Park and Natural Area. Families can sign up for classes and events, reserve a variety of rental facilities, and pick up brochures on city activities in our office, open Monday, Wednesday and Friday from 8 am to 5 pm, and Tuesday and Thursday from 12 noon to 5 pm.</p>
+            </section>
+            <section data-scene="bald">
+                <h2>Bald Hill Nature Area</h2>
+                <p>The Bald Hill Nature Area is located on the western edge of Corvallis and consist of 284 acres. This park offers both a moderately level, 1.5 mile multi-modal path along the base of the hill and several miles of dirt and gravel foot trails that circle and climb to the summit of the hill, as well as connect to the Mulkey Creek trail and Fitton Green Natural Area. The trails pass through varied habitats of upland prairie, oak savanna, oak woodlands, riparian areas and wetlands. Wildflowers are plentiful in the spring.</p>
+                <p>A rustic barn offers guests shade and shelter at the base of the hill. This barn may be reserved for parties and events by completing a Special Use Permit form. Please visit the Parks & Recreation office at 1310 SW Avery Park Drive or call us at 541-766-6918. Horseback riding and bicycling are permitted seasonally on designated trails. Several memorial benches allow guests the opportunity to rest and enjoy the beautiful vistas of nearby farms and the hills beyond. An area near the barn is designated as an off-leash dog area.</p>
+                <!--<img src="assets/baldbarn.jpg">-->
+                <img src="assets/baldbarn.jpg" style="
+    padding-left: 80px;
+">
+            </section>
+            <section data-scene="willamette">
+                <h2>Willamette Park</h2>
+                <p>Willamette Park is located on the south side of the city and consist of 287 acres. It features significant natural areas, open meadows and playing fields. The park is best known for its Willamette River views and access, and the Frisbee golf course that winds through the park. The Frisbee golf course is used year-round by Frisbee enthusiasts for practice, exhibitions and tournaments. The course features two basket positions for each hole, which keeps the course challenging for participants and allows the meadows to recover from frequent use.</p>
+                <p>Another popular feature of Willamette Park and Natural Area is that most of the park is designated as "off-leash" for dogs. Dogs are required to be on leash only in the picnic shelter, play ground and soccer field areas. The park includes the Rotary Shelter at Willamette Park which offers great views of the river and can be reserved for parties and events. There is play structure for young kids and 2 soccer fields that can be reserved for tournaments. Several hiking/jogging trails branch off of a multi-modal path that runs the length of the park. The path connects a nearby neighborhood at one end, and the Crystal Lake Sports Fields and Willamette Boat Landing at the other end. Several of the trails lead down to the river for easy riverside fishing.</p>
+                <img src="assets/willamette1.jpg" style="
+    padding-left: 10px;
+">
+            </section>
+
+            <section data-scene="end">
+                <div class= "end-background-img background-fullscreen-setting text-center" >
+                    <br/>
+                    <h3 style="color: white">Go out there and enjoy the sunlight before its all gone!</h3>
+                    <h3><small style="color: white">Find out more at <a>http://www.corvallisoregon.gov/index.aspx?page=56</a></small></h3>
+                </div>
+            </section>
+
+        </div>
+        <!--map div-->
+        <div id="map" class="col-sm-6 col-md-8 sidebar"></div>
+    </div>
+    <!--add a scrolling down arrow-->
+    <div class="animated zoomIn infinite glyphicon glyphicon-menu-down arrow-down"></div>
+    <!--add a navigation bar-->
+    <div class="navbar text-center"></div>
+
+    <!--add a info model -->
+    <div id="loading">
+        <i class="animated zoomIn infinite glyphicon glyphicon-globe"></i>
+    </div>
+
+    <dl>
+        <dt>
+            <!--facebook icon-->
+            <a class="fa fa-facebook-square btn" href="https://facebook.com/sharer.php?u=http://cdn.rawgit.com/jakobzhao/storymap/master/fullpage.html" target="_blank"></a>
+        </dt>
+        <dt>
+            <!--facebook icon-->
+            <a class="fa fa-git-square btn" href="https://github.com/jug650/drone_map" style="top:40px" target="_blank"></a>
+        </dt>
+        <dt>
+            <!--info icon-->
+            <i class="fa fa-file-text-o btn" style="top:60px" data-toggle="modal" data-target="#info-modal"></i>
+        </dt>
+    </dl>
+
+    <!--the info page-->
+    <div class="modal fade" id="info-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This is a web map that showcases the city parks of Corvallis, Oregon. It was made as a lab assignment for the course GEOG 572: Geospatial Analysis provided by Oregon State University. The story map library is derived from the storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality relies on both leaflet and Boostrap.</p>
+                    <p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.1 | MIT License </p>
+                    <p><b>Author: Jared Ritchey</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University </p>
+                    <p>The context and images of the parks were collected from the City of Corvallis Parks and Recreation.</p>
+                    <p>The background photos were taken by Jared Ritchey.</p>
+                    <p>The favicon image was acquired from <a>https://www.chykwest.com/wp-content/uploads/family-tree.jpg</a>.</p>
+                    <p>This story map uses geospatial data from Mapbox and the City of Corvallis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- main javascript -->
+<script type="text/javascript">
+
+    /**
+     * Created by jakob on 4/20/2017.
+     */
+    // Create Legend Contents in html format
+    var county_legend ='<i style="background: black; opacity: 1.0"></i><p><b>Counties</b></p>';
+    var corvallis_admin_legend = '<i style="background: orangered; opacity: 1.0"></i><p><b>City of Corvallis Parks</b></p>';
+    var forest_legend = '<i style="background: lime; opacity: 1.0"></i><p><b>Park Boundary</b></p>';
+
+    // For each layer, the first variable is the layer, the second is the legend. The layer variable can be any kinds of layers that leaflet.js supports.
+    // var layers = {
+    //      'layer1': [layer1, legend1]
+    //      'layer2': [layer2, legend2]
+    //      ...
+    // }
+
+    var parks = L.geoJson.ajax('assets/parks.geojson', {
+        pointToLayer: function (feature, latlng) {
+
+            delay = Math.floor((126 + latlng.lng) / 10 * 2000);
+            //delay =Math.floor(Math.random() * 400);
+
+            return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, color: orange, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-signal marker-icon'})});
+        },
+        onEachFeature: function (feature, layer) {
+            layer.bindTooltip(feature.properties.NAME, {sticky: true, className: "feature-tooltip"});
+        }
+    });
+
+
+    var layers = {
+        'bing' : [L.tileLayer.bing('AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L')],
+        'counties': [ L.geoJson.ajax('assets/counties.geojson',  {
+            color: 'black',
+            weight: 2,
+            opacity: 0.3}), county_legend],
+        'corvallis park': [parks,          {
+            color: 'orange',
+            weight: 5}, corvallis_admin_legend],
+        'parkzoom': [L.geoJson.ajax('assets/zoompark.geojson',          {
+            color: 'lime',
+            weight: 5}), forest_legend],
+        'avery': [L.geoJson.ajax('assets/avery.geojson',          {
+            color: 'lime',
+            weight: 5}), forest_legend],
+        'corvallis admin': [L.geoJson.ajax('http://mapious.ceoas.oregonstate.edu/geoserver/ceoas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ceoas:admin&outputFormat=application%2Fjson',          {
+            color: 'orange',
+            weight: 5}), forest_legend],
+        'forest cover 2010': [ L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'), forest_legend],
+        'satellite': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+            id: 'mapbox.dark'
+        })]
+    };
+
+
+    var scenes = {
+        overview: {lat: 44.5701158, lng: -123.325, zoom: 13, position: 'fullpage', name: 'Cover Page'},
+        intro: {lat: 44.5701158, lng: -123.325, zoom: 13, name: 'intro'},
+        corvallis: {lat: 44.5701158, lng: -123.325, zoom: 13, name: 'Corvallis', layers: ['corvallis park']},
+        chip: {lat: 44.608, lng: -123.287, zoom: 15.5, name: 'chip', layers: ['parkzoom']},
+        avery: {lat: 44.5535, lng: -123.28, zoom: 15.5, name: 'avery', layers: ['avery']},
+        bald: {lat: 44.567077, lng: -123.34, zoom: 15, name: 'bald', layers: ['parkzoom']},
+        willamette: {lat: 44.545, lng: -123.255823, zoom: 15, name: 'willamette', layers: ['parkzoom']},
+        end: {lat: 44.5701158, lng: -123.2949388, zoom: 13, name: 'The End', position: 'fullpage'}
+    };
+
+    $('.main').storymap({
+        scenes: scenes,
+        layers: layers,
+        legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
+        scale: false,
+        navbar: true,
+
+        createMap: function () {
+            // create a map in the "map" div, set the view to a given place and zoom
+            var map = L.map('map', {zoomControl: false, scrollWheelZoom: false});
+
+            // add an base map, which can be either OSM, mapbox, tilelayer, wmslayer or those designed by yourself.
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+                maxZoom: 18,
+                attribution: '<a href="http://ceoas.oregonstate.edu/profile/zhao/" target="_blank">Bo Zhao</a>',
+                id: 'mapbox.streets-satellite' // ,detectRetina: true
+            }).addTo(map);
+
+            L.control.scale({position: 'bottomright', metric: false}).addTo(map);
+
+
+//            // create a mini globe as the overview map control.
+//            var miniMap = new L.Control.GlobeMiniMap({
+//                marker:'red',
+//                position: 'bottomright'
+//            }).addTo(map);
+
+            // hidden the credits, but show in the about page.
+            $(".leaflet-control-attribution").css("display", "none");
+
+            return map;
+        }
+    });
+</script>
+</body>
+</html>
