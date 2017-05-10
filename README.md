@@ -6,3 +6,4 @@ The base layer is that was used is the Mapbox Street Satellite theme. This was d
 
 The intro scene contains a geojson file that contains a polygon for each park in the city. If the mouse hovers over the polygon, the name of that respective park will pop-up.  The remaining layers have additional geojson files that are loaded onto the base layer to show the extent of the park.
 
+RAWGIT Link- https://cdn.rawgit.com/jug650/parks/b5016449/index.html
